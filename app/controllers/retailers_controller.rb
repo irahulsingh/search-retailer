@@ -16,6 +16,11 @@ class RetailersController < ApplicationController
 	end
 
 	def search
+		current_lat = cookies[:user_current_lat]
+		current_lng = cookies[:user_current_lng]
+
+		radius = params[:search][:radius]
+		@retailers = Retailer.near([current_lat, current_lng], radius)
 	end
 
 	private

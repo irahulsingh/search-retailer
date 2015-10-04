@@ -1,0 +1,5 @@
+<ul>
+  <% @retailers.each do |retailer| %>
+    <li><%= retailer.name %> | <%= retailer.phone %> | <%= retailer.address %> | <%= retailer.lat %> | <%= retailer.lng %></li>
+  <% end %>
+</ul>
