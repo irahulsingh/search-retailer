@@ -1,0 +1,26 @@
+<div class="create-retailer">
+	<h2>Create Retailer</h2>
+	<fieldset>
+		<%= form_for @retailer do |f| %>
+			<div class="form-group">
+				<%= f.label :name %>
+				<br/>
+				<%= f.text_field :name %>
+			</div>
+
+			<div class="form-group">
+				<%= f.label :phone %>
+				<br/>
+				<%= f.number_field :phone %>
+			</div>
+
+			<div class="form-group">
+				<%= f.label :address %>
+				<br/>
+				<%= f.text_field :address %>
+			</div>
+			<br/>
+			<%= f.submit "Create" %>
+		<% end %>
+	</fieldset>
+</div>
