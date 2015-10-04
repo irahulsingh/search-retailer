@@ -1,0 +1,17 @@
+<div class="search-retailer">
+	<h2>Search Retailer</h2>
+	<fieldset>
+		<%= form_for :search, url: "#" do |f| %>
+			<div class="form-group">
+				<%= f.label :radius %>
+				<br/>
+				<%= f.select :radius, Retailer::RADIUS, {prompt: '---select radius---'}, {} %>
+			</div>
+			<br/>
+			<%= f.submit "Search" %>
+		<% end %>
+	</fieldset>
+
+	<br/>
+	<%= link_to "Create a new Retailer", new_retailer_path %> 
+</div>
