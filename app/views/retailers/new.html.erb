@@ -1,6 +1,7 @@
 <div class="create-retailer">
 	<h2>Create Retailer</h2>
 	<fieldset>
+		<%= render_errors(@retailer) %>
 		<%= form_for @retailer do |f| %>
 			<div class="form-group">
 				<%= f.label :name %>
@@ -17,10 +18,21 @@
 			<div class="form-group">
 				<%= f.label :address %>
 				<br/>
-				<%= f.text_field :address %>
+				<%= f.text_field :address, id: "location-autocomplete", autocomplete: "off" %>
 			</div>
 			<br/>
 			<%= f.submit "Create" %>
+			<%= link_to "Back", root_path %>
 		<% end %>
 	</fieldset>
 </div>
+
+<% if Retailer.any? %>
+	<div class="list-retailers">
+		<ul>
+			<% Retailer.all.order('created_at desc').each do |ret| %>
+				<li><%= ret.name %> | <%= ret.phone %> | <%= ret.address %> | <%= ret.lat %> | <%= ret.lng %></li>
+			<% end %>
+		</ul>
+	</div>
+<% end %>
