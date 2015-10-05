@@ -1,5 +1,5 @@
 <ul>
   <% @retailers.each do |retailer| %>
-    <li><%= retailer.name %> | <%= retailer.phone %> | <%= retailer.address %> | <%= retailer.lat %> | <%= retailer.lng %></li>
+    <li><%= retailer.name %> | <%= retailer.phone %> | <%= retailer.address %> | <%= retailer.lat %> | <%= retailer.lng %> | <%= retailer.distance_from([@current_lat, @current_lng]).round(2) %> Km</li>
   <% end %>
 </ul>
